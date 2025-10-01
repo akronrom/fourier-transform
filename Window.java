@@ -18,12 +18,10 @@ public class Window extends JPanel {
 		
 		frame.setSize(WIDTH, HEIGHT);
 		frame.setResizable(false);
-		frame.setUndecorated(true);
+		//frame.setUndecorated(true);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
-		
-		
 		
 		frame.add(this);
 		frame.pack();
@@ -31,34 +29,25 @@ public class Window extends JPanel {
 	
 	public void paint(Graphics g) {
 		
-		setBackground(Color.WHITE);
-		
 		Graphics2D g2D = (Graphics2D) g;
-		Shape.drawLine(
-		0, 		0, 
-		x1, 	500, 
-		g2D, 	1);
 		
-		Shape.drawLine(
-		500, 	0, 
-		0, 		500, 
-		g2D, 	1);
 		
-		//g2D.drawOval(0, 0, 500, 500);
+		g2D.drawOval((WIDTH-x1)/2, (HEIGHT-x1)/2, x1, x1);
 		
 		System.out.println("Reprinting");
 		try {
 			
-			Thread.sleep(1000);
+			Thread.sleep(16);
 			
 			
 		} catch (Exception e) {
 			
 		}
 		x1--;
-		repaint();
+		
+		
+		frame.repaint();
 		
 	}
-	
 	
 }
